@@ -1,23 +1,24 @@
 import os
 from openai import OpenAI
 
-api_key = os.getenv['OPEN_AI_API_KEY']
+api_key = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI(api_key=api_key)
 
-  # Add your OpenAI API key here
-
-def generate_description(input):
-    messages = [
-        {"role": "system",
-         "content": """As a Product Description Generator, Generate multi paragraph rich text product description with emojis from the information provided to you' \n"""},
+def gerarBo(input):
+  completion = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[
+        {"role": "system", "content": "Você é um sistema gerador de Boletins de Ocorrência da Polícia de Sergipe"+
+         "você deve ouvir um áudio e a partir das informações dele, criar um boletim de ocorrência com a data do"+
+         "crime, o endereço, a descrição do acontecimento e os envolvidos. "},
+        {
+            "role": "user",
+            "content": f"{input}"
+        }
     ]
-
-    messages.append({"role": "user", "content": f"{input}"})
-    completion = client.chat.completions.create(model="gpt-4o-mini",
-    messages=messages)
-    reply = completion.choices[0].message.content
-    return reply
+  )
+  return completion.choices[0].message 
 
 
 
