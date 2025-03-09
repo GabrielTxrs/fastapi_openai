@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
 from utils import gerarBoletimOcorrencia
 from transcribe import run_whisperx_cmd
 

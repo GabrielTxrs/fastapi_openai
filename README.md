@@ -1,4 +1,4 @@
-# Comandos de inciializacao
+# Comandos de incialização
 ```
 .\fastenv\Scripts\activate
 ```
