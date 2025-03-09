@@ -1,40 +1,31 @@
-import speech_recognition as sr
-from pydub import AudioSegment
+import subprocess
 import os
 
-def transcribeAudio(audio_path: str) -> str:
-    recognizer = sr.Recognizer()
+def run_whisperx_cmd(audio_path):
+    # Create the output directory if it doesn't exist
+    output_dir = "transcricao"
+    os.makedirs(output_dir, exist_ok=True)
+    # Construct the command with the output directory
+    command = f"whisperx {audio_path} --diarize --compute_type float32 --language Portuguese --output_dir {output_dir} --output_format txt"
+    print(command)
     
     try:
-        # Verificar se o arquivo de áudio existe
-        if not os.path.exists(audio_path):
-            return "Arquivo de áudio não encontrado."
-        
-        print(f"Processando o arquivo de áudio: {audio_path}")
-        
-        # Converter o arquivo .m4a para .wav temporariamente
-        audio = AudioSegment.from_file(audio_path)
-        temp_wav_path = audio_path.replace(".m4a", ".wav")
-        audio.export(temp_wav_path, format="wav")
-        print(f"Arquivo convertido para WAV: {temp_wav_path}")
-    except Exception as e:
-        return f"Erro ao converter o arquivo de áudio: {e}"
+        # Execute the command
+        subprocess.run(command, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except subprocess.CalledProcessError as e:
+        return f"Error: Command failed with message: {e}"
+
+    # Construct the path to the output file
+    txt_file_path = os.path.join(output_dir, os.path.splitext(os.path.basename(audio_path))[0] + ".txt")
     
-    try:
-        with sr.AudioFile(temp_wav_path) as source:
-            audio = recognizer.record(source)
-        
-        text = recognizer.recognize_google(audio, language="pt-BR")
-        print(f"Texto transcrito: {text}")
-    except sr.UnknownValueError:
-        text = "Não foi possível transcrever o áudio."
-    except sr.RequestError:
-        text = "Erro ao se comunicar com o serviço de reconhecimento de fala."
-    except Exception as e:
-        text = f"Erro ao processar o arquivo de áudio: {e}"
-    finally:
-        # Remover o arquivo .wav temporário
-        if os.path.exists(temp_wav_path):
-            os.remove(temp_wav_path)
+    # Check if the output file exists
+    if os.path.exists(txt_file_path):
+        # Read the content of the output file
+        with open(txt_file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        return content
+    else:
+        return "Error: Transcription file not found."
+
     
-    return text
+    return content

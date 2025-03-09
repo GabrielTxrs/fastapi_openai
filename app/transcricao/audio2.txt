@@ -1,0 +1,11 @@
+[SPEAKER_03]: Moça, o que aconteceu?
+[SPEAKER_00]: Um cara doido do centro me bateu.
+[SPEAKER_03]: Como ele era?
+[SPEAKER_00]: Ele era alto, tinha um cabelo preto e uma tatuagem de caveira no braço.
+[SPEAKER_02]: Onde foi que aconteceu?
+[SPEAKER_00]: No centro, em Aracaju.
+[SPEAKER_01]: Que horas?
+[SPEAKER_00]: Tem umas três e meia da tarde.
+[SPEAKER_01]: Você sabe que rua foi?
+[SPEAKER_00]: Eu acho que foi na rua Lagarto.
+[SPEAKER_00]: Eu acho que você já me perguntou isso.

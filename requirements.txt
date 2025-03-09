@@ -1,10 +1,4 @@
 fastapi
 uvicorn
-openai
-requests
-ffmpeg
-pydub
-pydantic
-speechrecognition
-fpdf
-python-multipart
+redis
+types-redis

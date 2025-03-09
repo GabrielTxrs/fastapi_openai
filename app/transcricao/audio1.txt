@@ -1,0 +1,14 @@
+[SPEAKER_00]: Olá, moça, tudo bom?
+[SPEAKER_00]: O que aconteceu?
+[SPEAKER_01]: Não sei.
+[SPEAKER_00]: Você foi roubada, foi o que aconteceu?
+[SPEAKER_01]: Não, um cara me bateu no meio da rua.
+[SPEAKER_00]: Vixe, e por que ele fez isso?
+[SPEAKER_01]: Eu não sei, eu acho que ele era doido.
+[SPEAKER_00]: Você sabe me dizer onde foi?
+[SPEAKER_01]: Foi no centro de Aracaju.
+[SPEAKER_00]: Em qual rua?
+[SPEAKER_01]: Na Rua Lagarto.
+[SPEAKER_00]: Que horas?
+[SPEAKER_01]: Pela tarde, umas três e meia.
+[SPEAKER_00]: E tá bom, obrigado.

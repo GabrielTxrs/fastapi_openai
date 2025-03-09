@@ -1,20 +1,18 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from utils import gerarBo
-from transcribe import transcribeAudio
+from utils import gerarBoletimOcorrencia
+from transcribe import run_whisperx_cmd
+
 app = FastAPI()
 
-@app.get("/ok")
-async def ok_endpoint():
-    return {"message": "ok"}
+# audio/audio1.wav 
+# audio/audio2.wav
+# audio/roubo-1.mp3
+# audio/roubo-2.mp3
 
-@app.get("/hello")
-async def hello_endpoint(name: str = 'World'):
-    return {"message": f"Hello, {name}!"}
-
-@app.post("/gerar_bo")
+@app.post("/gerar_bo/{caminhoAudio}")
 async def gerarBo(caminhoAudio: str):
-    transcricao = transcribeAudio(caminhoAudio)
-    print(transcricao)
-    resposta = await gerarBo(transcricao)
-    print(resposta)
+    transcricao = run_whisperx_cmd("audio/"+caminhoAudio)
+    return gerarBoletimOcorrencia(transcricao)
+    
+
