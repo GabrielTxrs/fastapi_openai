@@ -37,4 +37,4 @@ def gerarBoletimOcorrencia(input):
       file.write(response)
   
   print(f"Boletim salvo em {file_name}")
-  return file_path
+  return response
