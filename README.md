@@ -65,7 +65,7 @@ export HF_TOKEN=SEU_TOKEN_DO_HUGGING_FACE
 
 ### 7. Testando a funcionalidade
 ```
-whisperx caminho_audio --diarize --compute_type float32 --language Portugues
+whisperx caminho_audio --diarize --compute_type float32 --language Portuguese
 ```
 
 ### 8. Rodar a FastAPI
