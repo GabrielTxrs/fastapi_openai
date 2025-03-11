@@ -1,0 +1,1 @@
+Desculpe, mas não consigo ouvir áudios ou processar arquivos de áudio. No entanto, se você fornecer as informações contidas no áudio, ficarei feliz em ajudá-lo a criar um boletim de ocorrência com base nesses dados.
