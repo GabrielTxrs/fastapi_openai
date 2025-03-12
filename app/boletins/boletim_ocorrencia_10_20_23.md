@@ -1,1 +1,0 @@
-Parece que houve um erro ao tentar processar o áudio. Para que eu possa gerar um boletim de ocorrência, você precisa fornecer as informações contidas no áudio. Por favor, descreva o que foi dito ou forneça os detalhes relevantes, e eu criarei o boletim de ocorrência com base nessas informações.
