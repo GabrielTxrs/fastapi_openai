@@ -1,3 +1,9 @@
+# Projeto de Tópicos Especias em Inteligência Artificial
+Equipe:
+Gabriel Teixeira Silveira,
+Marcelo Pedral Mota,
+Matheus Araujo Pereira
+
 # Configuração do whisperX num ambiente Ubuntu 24.04.2
 
 Muitos dos passos citados abaixo vem da documentação oficial do whisperX, plataforma utilizada para a transcrição e identificação de locutores, disponícel no link: (https://github.com/m-bain/whisperX).
